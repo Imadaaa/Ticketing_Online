@@ -1,0 +1,60 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    /**
+     * Run the migrations.
+     */
+    public function up(): void
+    {
+        Schema::create('acara', function (Blueprint $table) {
+            $table->id();
+            $table->bigInteger('lokasi_id')->unsigned();
+            $table->bigInteger('kategori_id')->unsigned();
+            $table->bigInteger('user_id')->unsigned();
+            $table->bigInteger('kampus_id')->unsigned()->nullable();
+            $table->string('judul');
+            $table->string('thumbnail')->nullable();
+            $table->text('deskripsi');
+            $table->datetime('waktu_mulai');
+            $table->integer('durasi_menit_estimasi');
+            $table->string('slug');
+            $table->integer('kuota');
+            $table->string('dress_code')->nullable();
+            $table->boolean('is_pending')->default(false);
+            $table->text('peraturan')->nullable();
+            $table->string('foto_stage')->nullable();
+            $table->text('keterangan')->nullable();
+            $table->integer('view_count')->default(0);
+            $table->timestamps();
+
+            $table->foreign('lokasi_id')
+                    ->references('id')
+                    ->on('lokasi');
+
+            $table->foreign('kategori_id')
+                    ->references('id')
+                    ->on('kategori');
+
+            $table->foreign('user_id')
+                    ->references('id')
+                    ->on('users');
+
+            $table->foreign('kampus_id')
+                    ->references('id')
+                    ->on('kampus');
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     */
+    public function down(): void
+    {
+        Schema::dropIfExists('acara');
+    }
+};
