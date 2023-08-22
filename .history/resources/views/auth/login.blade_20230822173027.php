@@ -14,7 +14,7 @@
     <div class="container py-5">
         <div class="row mt-5 justify-content-center">
             <div class="col-lg-5 wrap-login">
-                @if (session('error'))
+                @if(session('error'))
                     <div class="alert bg-danger fs-14 text-white">
                         <i class="fa-solid fa-circle-xmark"></i>
                         <span>{{ session('error') }}</span>
@@ -32,20 +32,15 @@
                             @csrf
                             <div class="mb-3">
                                 <label for="email" class="fs-14">Email</label>
-                                <input autocomplete="off" type="email" class="form-control fs-14" name="email"
-                                    id="email" placeholder="Masukkan email" required>
+                                <input autocomplete="fa"  type="email" class="form-control fs-14" name="email" id="email" placeholder="Masukkan email" required>
                             </div>
                             <div class="mb-3">
                                 <label for="password" class="fs-14">Password</label>
-                                <input type="password" class="form-control fs-14" name="password" id="password"
-                                    placeholder="Masukkan password" required>
+                                <input type="password" class="form-control fs-14" name="password" id="password" placeholder="Masukkan password" required>
                             </div>
                             <div class="mb-3">
-                                <p class="fs-14 mb-1 text-muted">Belum punya akun? daftar <a
-                                        class="text-primary text-decoration-none" href="{{ route('register') }}">disini</a>
-                                </p>
-                                <p class="fs-14 mb-1 text-muted"><a class="text-primary text-decoration-none"
-                                        href="{{ route('register') }}">Lupa Password</a></p>
+                                <p class="fs-14 mb-1 text-muted">Belum punya akun? daftar <a class="text-primary text-decoration-none" href="{{ route('register') }}">disini</a></p>
+                                <p class="fs-14 mb-1 text-muted"><a class="text-primary text-decoration-none" href="{{ route('register') }}">Lupa Password</a></p>
                                 <button type="submit" class="btn btn-primary fw-700 fs-14">Log In</button>
                             </div>
                         </form>

@@ -50,7 +50,7 @@ Route::group(['prefix' => 'register'], function() {
 // dashboard
 Route::group(['prefix' => 'dashboard'], function() {
     // pages
-    Route::get('/', [DashboardController::class, 'getIndex'])->name('dashboard.index');
+    Route::get('/', [DashboardController::class, 'getIndex'])->name('dashboard.index'); 
 
     // kategori
     Route::group(['prefix' => 'kategori'], function() {
@@ -88,7 +88,7 @@ Route::group(['prefix' => 'dashboard'], function() {
 
         Route::get('/{acara}/jenis-tiket', [JenisTiketController::class, 'index'])->name('dashboard.jenis-tiket.index');
         Route::post('/{acara}/jenis-tiket', [JenisTiketController::class, 'store'])->name('dashboard.jenis-tiket.store');
-
+        
         Route::get('/{acara}/tiket/datatable-json', [TiketController::class, 'datatableJson'])->name('dashboard.tiket.datatable-json');
         Route::post('/{acara}/tiket', [TiketController::class, 'store'])->name('dashboard.tiket.store');
         Route::delete('/tiket/{tiket}', [TiketController::class, 'destroy'])->name('dashboard.tiket.destroy');

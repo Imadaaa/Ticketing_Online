@@ -112,3 +112,8 @@ footer, .bg-dark {
     color: #464F9E !important;
 }
 
+.footer-fixed {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+}

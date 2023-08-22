@@ -3,7 +3,7 @@
 
     <style>
         .footer {
-            position: absolute;
+            p
             bottom: 0;
             width: 100%;
             padding: 20px 0;

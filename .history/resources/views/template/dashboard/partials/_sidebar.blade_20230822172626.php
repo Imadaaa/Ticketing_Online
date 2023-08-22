@@ -1,7 +1,7 @@
 <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
     <!-- Sidebar - Brand -->
-    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ route('landing-page.index') }}">
+    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ route('landing-page.in') }}">
         <div class="sidebar-brand-icon rotate-n-15">
             <i class="fas fa-laugh-wink"></i>
         </div>
@@ -46,20 +46,17 @@
             <i class="fas fa-fw fa-map-marker-alt"></i>
             <span>Lokasi</span></a>
     </li>
-    <li
-        class="nav-item {{ request()->is('dashboard/kategori') || request()->is('dashboard/kategori/*') ? 'active' : '' }}">
+    <li class="nav-item {{ request()->is('dashboard/kategori') || request()->is('dashboard/kategori/*') ? 'active' : '' }}">
         <a class="nav-link" href="{{ route('dashboard.kategori.index') }}">
             <i class="fas fa-fw fa-th-large"></i>
             <span>Kategori</span></a>
     </li>
-    <li
-        class="nav-item {{ request()->is('dashboard/kampus') || request()->is('dashboard/kampus/*') ? 'active' : '' }}">
+    <li class="nav-item {{ request()->is('dashboard/kampus') || request()->is('dashboard/kampus/*') ? 'active' : '' }}">
         <a class="nav-link" href="{{ route('dashboard.kampus.index') }}">
             <i class="fas fa-fw fa-university"></i>
             <span>Kampus</span></a>
     </li>
-    <li
-        class="nav-item {{ request()->is('dashboard/metode-pembayaran') || request()->is('dashboard/metode-pembayaran/*') ? 'active' : '' }}">
+    <li class="nav-item {{ request()->is('dashboard/metode-pembayaran') || request()->is('dashboard/metode-pembayaran/*') ? 'active' : '' }}">
         <a class="nav-link" href="{{ route('dashboard.metode-pembayaran.index') }}">
             <i class="fas fa-fw fa-credit-card"></i>
             <span>Metode Pembayaran</span></a>
